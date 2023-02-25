@@ -229,3 +229,8 @@ WantedBy=multi-user.target" >${CSP_CONNECTOR_SERVICE}
 
 ### Feed a pre recorded stream into RTSP server.
 # ffmpeg -re -stream_loop -1 -i output.mp4 -c copy -f rtsp rtsp://Administrator:Password@localhost:8554/test_0
+
+# Install youtube download plus.
+# curl -L https://github.com/yt-dlp/yt-dlp/releases/download/2023.02.17/yt-dlp_linux -o yt-dlp
+# chmod +x ./yt-dlp
+# ./yt-dlp -S ext:mp4:m4a https://www.youtube.com/watch?v=z1KQxZyy1MM
