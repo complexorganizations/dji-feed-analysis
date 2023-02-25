@@ -81,9 +81,7 @@ RTSP_SIMPLE_SERVER_LATEST_RELEASE=$(curl -s https://api.github.com/repos/aler9/r
 RTSP_SIMPLE_SERVER_LASTEST_FILE_NAME=$(echo "${RTSP_SIMPLE_SERVER_LATEST_RELEASE}" | cut --delimiter="/" --fields=9)
 RTSP_SIMPLE_SERVER_TEMP_DOWNLOAD_PATH="/tmp/${RTSP_SIMPLE_SERVER_LASTEST_FILE_NAME}"
 
-# Note: Get the latest release and don't get the "main" branch.
 AMAZON_KINESIS_VIDEO_STREAMS_LATEST_RELEASE=$(curl -s https://api.github.com/repos/awslabs/amazon-kinesis-video-streams-producer-sdk-cpp/releases/latest | grep zipball_url | cut -d'"' -f4)
-# https://api.github.com/repos/awslabs/amazon-kinesis-video-streams-producer-sdk-cpp/zipball/v3.3.1
 AMAZON_KINESIS_VIDEO_STREAMS_FILE_NAME=$(echo "${AMAZON_KINESIS_VIDEO_STREAMS_LATEST_RELEASE}" | cut --delimiter="/" --fields=6)
 AMAZON_KINESIS_VIDEO_STREAMS_TEMP_DOWNLOAD_PATH="/tmp/${AMAZON_KINESIS_VIDEO_STREAMS_FILE_NAME}.zip"
 AMAZON_KINESIS_VIDEO_STREAMS_PRODUCER_PATH="/etc/${AMAZON_KINESIS_VIDEO_STREAMS_FILE_NAME}"
