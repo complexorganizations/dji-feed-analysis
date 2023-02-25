@@ -13,7 +13,7 @@ func main() {
 		// Check the ammount of time the rtsp server has run
 		if rtspConnectionCounter == 0 {
 			// Check if the rtsp server is alive and responding to requests; run the upload in the background
-			if rtspSeverOneStatus {
+			if <-rtspServerStatusChannel {
 				// Add a 1 to the counter
 				rtspConnectionCounter = rtspConnectionCounter + 1
 				log.Println("We are here 2")
