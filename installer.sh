@@ -224,8 +224,8 @@ WantedBy=multi-user.target" >${CSP_CONNECTOR_SERVICE}
 # Install the cloud connector
 # install-cps-connetor
 
+### Record a stream.
+# ffmpeg -i rtsp://Administrator:Password@localhost:8554/drone_0 -c copy output.mp4
 
-
-### Feed random fake data into the RTSP server.
-# curl -L https://raw.githubusercontent.com/complexorganizations/dji-feed-analysis/main/assets/output.ts -o /etc/rtsp-simple-server/output.ts
-# ffmpeg -re -stream_loop -1 -i /etc/rtsp-simple-server/output.ts -c copy -f rtsp rtsp://localhost:8554/test_stream_one
+### Feed a pre recorded stream into RTSP server.
+# ffmpeg -re -stream_loop -1 -i output.mp4 -c copy -f rtsp rtmp://localhost:1935/test_0?user=Administrator&pass=Password
