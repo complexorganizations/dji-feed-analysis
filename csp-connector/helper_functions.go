@@ -8,6 +8,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"sync"
 	"time"
 
 	"github.com/aler9/gortsplib/v2"
@@ -152,7 +153,7 @@ func checkRTSPServerAlive(rtspURL string) bool {
 // Note: If the packets loop than do a counter and end the stream since its a bad stream; recheck and do it again. (loop)
 
 // Run this function in the background and check if a given RTSP server is alive
-func checkRTSPServerAliveInBackground(rtspURL string) {
+func checkRTSPServerAliveInBackground(rtspURL string, rtspServerStatusChannel chan bool, rtspServerWaitGroup *sync.WaitGroup) {
 	for {
 		// Check if the server is alive
 		if checkRTSPServerAlive(rtspURL) {
@@ -160,16 +161,13 @@ func checkRTSPServerAliveInBackground(rtspURL string) {
 		} else {
 			rtspSeverOneStatus = false
 		}
-		// Check if the server is alive and sleep for 30 seconds; else sleep for 15 seconds
-		if rtspSeverOneStatus {
-			time.Sleep(30 * time.Second)
-			continue
-		} else {
-			time.Sleep(15 * time.Second)
-			continue
-		}
+		// Return the status of the server via the channel
+		rtspServerStatusChannel <- rtspSeverOneStatus
+		// Wait for 5 seconds before checking again
+		time.Sleep(5 * time.Second)
+		// Waitgroup done
+		rtspServerWaitGroup.Done()
 	}
-	rtspServerWaitGroup.Done()
 }
 
 // Forward data to google cloud vertex AI
