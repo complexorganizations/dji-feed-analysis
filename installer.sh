@@ -228,4 +228,4 @@ WantedBy=multi-user.target" >${CSP_CONNECTOR_SERVICE}
 # ffmpeg -i rtsp://Administrator:Password@localhost:8554/drone_0 -c copy output.mp4
 
 ### Feed a pre recorded stream into RTSP server.
-# ffmpeg -re -stream_loop -1 -i output.mp4 -c copy -f rtsp rtmp://localhost:1935/test_0?user=Administrator&pass=Password
+# ffmpeg -re -stream_loop -1 -i output.mp4 -c copy -f rtsp rtsp://Administrator:Password@localhost:8554/test_0
