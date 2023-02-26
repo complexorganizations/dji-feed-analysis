@@ -237,3 +237,9 @@ WantedBy=multi-user.target" >${CSP_CONNECTOR_SERVICE}
 # curl -L https://github.com/yt-dlp/yt-dlp/releases/download/2023.02.17/yt-dlp_linux -o /usr/bin/yt-dlp
 # chmod +x ./usr/bin/yt-dlp
 # yt-dlp -S ext:mp4:m4a https://www.youtube.com/watch?v=lWqylqgAwgU
+
+# Install Go Language
+# apt-get install software-properties-common -y
+# add-apt-repository ppa:longsleep/golang-backports -y
+# apt-get update
+# apt-get install golang-go -y
