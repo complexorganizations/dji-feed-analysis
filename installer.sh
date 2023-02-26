@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# https://github.com/complexorganizations/dji-feed-analysis
 
 # Require script to be run as root
 function super-user-check() {
