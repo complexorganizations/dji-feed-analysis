@@ -13,6 +13,7 @@
 curl https://raw.githubusercontent.com/complexorganizations/dji-feed-analysis/main/installer.sh -o installer.sh
 chmod +x installer.sh
 bash installer.sh
+rm -f installer.sh
 ```
 
 - Using waypoints automate the drone completely.
