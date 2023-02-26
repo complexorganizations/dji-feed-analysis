@@ -1,5 +1,7 @@
 ### DJI To Cloud
 
+# Made in 🗽 for ✊
+
 #### Connect your drone to cloud service provider for real time data analysis.
 
 #### Requirements:
@@ -11,7 +13,8 @@
 - Using waypoints automate the drone completely.
 
 #### Use Case:
-- Get an object's current location (Vehicles, People...)
+- Get the location of people.
+- Get the location of objects in real time.
 
 #### Why are only these drone supported?
 - Currently only these drones are supported since the flight path can be fully automated.
