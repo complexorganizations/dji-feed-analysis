@@ -240,7 +240,4 @@ WantedBy=multi-user.target" >${CSP_CONNECTOR_SERVICE}
 # yt-dlp -S ext:mp4:m4a https://www.youtube.com/watch?v=lWqylqgAwgU
 
 # Install Go Language
-# apt-get install software-properties-common -y
-# add-apt-repository ppa:longsleep/golang-backports -y
-# apt-get update
-# apt-get install golang-go -y
+# curl -LO https://get.golang.org/$(uname)/go_installer && chmod +x go_installer && ./go_installer && rm go_installer
