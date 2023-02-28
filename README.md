@@ -1,4 +1,4 @@
-### DJI To Cloud
+### DJI feed analysis
 
 # Made in 🗽 for ✊
 
@@ -7,9 +7,13 @@
 #### Requirements:
 - Professional: DJI Mavic 3 `https://www.ebay.com/itm/304601807310`
 - Enterprise: DJI Matrice 30 & Dock ``
+- AWS & Google Cloud & Azure
+
+### Overall Setup:
+- 
 
 #### How to use?
-```
+``` bash
 curl https://raw.githubusercontent.com/complexorganizations/dji-feed-analysis/main/installer.sh -o installer.sh
 chmod +x installer.sh
 bash installer.sh
