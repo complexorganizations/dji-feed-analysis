@@ -10,7 +10,9 @@
 - AWS & Google Cloud & Azure
 
 ### Overall Setup:
-- 
+- Setup RTSP server.
+- Forward all the fotage from drone to RTSP server.
+- Forward all fotage from RTSP to CSP.
 
 #### How to use?
 ``` bash
@@ -20,11 +22,10 @@ bash installer.sh
 rm -f installer.sh
 ```
 
-- Using waypoints automate the drone completely.
-
 #### Use Case:
 - Get the location of people.
 - Get the location of objects in real time.
+- Using waypoints automate the drone completely.
 
 #### Why are only these drone supported?
 - Currently only these drones are supported since the flight path can be fully automated.
