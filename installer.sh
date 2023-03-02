@@ -83,7 +83,7 @@ CSP_CONNECTOR_SERVICE="/etc/systemd/system/csp-connector.service"
 CSP_CONNECTOR_TEMP_DOWNLOAD_PATH="/tmp/${CSP_CONNECTOR_LATEST_FILE_NAME}"
 
 GOOGLE_CLOUD_VISION_AI_LATEST_RELEASE=$(curl -s https://api.github.com/repos/google/visionai/releases/latest | grep browser_download_url | cut -d'"' -f4)
-GOOGLE_CLOUD_VISION_AI_LEAST_FILE_NAME=$(echo ${GOOGLE_CLOUD_VISION_AI_LATEST_RELEASE} | cut --delimiter="/" --fields=9)
+GOOGLE_CLOUD_VISION_AI_LEAST_FILE_NAME=$(echo "${GOOGLE_CLOUD_VISION_AI_LATEST_RELEASE}" | cut --delimiter="/" --fields=9)
 GOOGLE_CLOUD_VISION_AI_TEMP_DOWNLOAD_PATH="/tmp/${GOOGLE_CLOUD_VISION_AI_LEAST_FILE_NAME}"
 
 RTSP_CONFIG_FILE_GITHUB_URL="https://raw.githubusercontent.com/complexorganizations/dji-feed-analysis/main/assets/rtsp-simple-server.yml"
@@ -98,10 +98,10 @@ RTSP_SIMPLE_SERVICE_APPLICATION="${RTSP_SIMPLE_SERVER_PATH}/rtsp-simple-server"
 # Install rtsp application.
 function install-rtsp-application() {
     mkdir -p ${RTSP_SIMPLE_SERVER_PATH}
-    curl -L "${RTSP_SIMPLE_SERVER_LATEST_RELEASE}" -o ${RTSP_SIMPLE_SERVER_TEMP_DOWNLOAD_PATH}
-    tar -xvf ${RTSP_SIMPLE_SERVER_TEMP_DOWNLOAD_PATH} -C ${RTSP_SIMPLE_SERVER_PATH}
-    rm -f ${RTSP_SIMPLE_SERVER_TEMP_DOWNLOAD_PATH}
-    curl ${RTSP_CONFIG_FILE_GITHUB_URL} -o ${RTSP_SIMPLE_SERVER_CONFIG}
+    curl -L "${RTSP_SIMPLE_SERVER_LATEST_RELEASE}" -o "${RTSP_SIMPLE_SERVER_TEMP_DOWNLOAD_PATH}"
+    tar -xvf "${RTSP_SIMPLE_SERVER_TEMP_DOWNLOAD_PATH}" -C ${RTSP_SIMPLE_SERVER_PATH}
+    rm -f "${RTSP_SIMPLE_SERVER_TEMP_DOWNLOAD_PATH}"
+    curl ${RTSP_CONFIG_FILE_GITHUB_URL} -o "${RTSP_SIMPLE_SERVER_CONFIG}"
     chmod +x ${RTSP_SIMPLE_SERVICE_APPLICATION}
     if [ ! -f "${RTSP_SIMPLE_SERVER_SERVICE}" ]; then
         # This code creates the service file
@@ -131,14 +131,14 @@ function build-kensis-application() {
         if { [ "${CURRENT_DISTRO}" == "ubuntu" ] || [ "${CURRENT_DISTRO}" == "debian" ] || [ "${CURRENT_DISTRO}" == "raspbian" ] || [ "${CURRENT_DISTRO}" == "pop" ] || [ "${CURRENT_DISTRO}" == "kali" ] || [ "${CURRENT_DISTRO}" == "linuxmint" ] || [ "${CURRENT_DISTRO}" == "neon" ]; }; then
             apt-get install build-essential pkg-config cmake m4 libssl-dev libcurl4-openssl-dev liblog4cplus-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-base-apps gstreamer1.0-plugins-bad gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly gstreamer1.0-tools -y
         fi
-        curl -L "${AMAZON_KINESIS_VIDEO_STREAMS_LATEST_RELEASE}" -o ${AMAZON_KINESIS_VIDEO_STREAMS_TEMP_DOWNLOAD_PATH}
-        unzip ${AMAZON_KINESIS_VIDEO_STREAMS_TEMP_DOWNLOAD_PATH} -d ${AMAZON_KINESIS_VIDEO_STREAMS_PRODUCER_PATH}
-        rm -f ${AMAZON_KINESIS_VIDEO_STREAMS_TEMP_DOWNLOAD_PATH}
+        curl -L "${AMAZON_KINESIS_VIDEO_STREAMS_LATEST_RELEASE}" -o "${AMAZON_KINESIS_VIDEO_STREAMS_TEMP_DOWNLOAD_PATH}"
+        unzip "${AMAZON_KINESIS_VIDEO_STREAMS_TEMP_DOWNLOAD_PATH}" -d "${AMAZON_KINESIS_VIDEO_STREAMS_PRODUCER_PATH}"
+        rm -f "${AMAZON_KINESIS_VIDEO_STREAMS_TEMP_DOWNLOAD_PATH}"
         # Change the path to the log file so the correct path is build everytime.
         # sed -i "s|../kvs_log_configuration|${AMAZON_KINESIS_VIDEO_STREAMS_KVS_LOG_PATH}|g" ${AMAZON_KINESIS_VIDEO_STREAMS_GST_STREAMER_CONFIG}
-        mkdir -p ${AMAZON_KINESIS_VIDEO_STREAMS_PRODUCER_BUILD_PATH}
-        cmake -DBUILD_GSTREAMER_PLUGIN=TRUE -S ${AMAZON_KINESIS_VIDEO_STREAMS_PRODUCER_PATH} -B ${AMAZON_KINESIS_VIDEO_STREAMS_PRODUCER_BUILD_PATH}
-        make -C ${AMAZON_KINESIS_VIDEO_STREAMS_PRODUCER_BUILD_PATH}
+        mkdir -p "${AMAZON_KINESIS_VIDEO_STREAMS_PRODUCER_BUILD_PATH}"
+        cmake -DBUILD_GSTREAMER_PLUGIN=TRUE -S "${AMAZON_KINESIS_VIDEO_STREAMS_PRODUCER_PATH}" -B "${AMAZON_KINESIS_VIDEO_STREAMS_PRODUCER_BUILD_PATH}"
+        make -C "${AMAZON_KINESIS_VIDEO_STREAMS_PRODUCER_BUILD_PATH}"
         # Add the path to the .profile file so that it can be used in the future
         echo -e "export GST_PLUGIN_PATH=${AMAZON_KINESIS_VIDEO_STREAMS_PRODUCER_BUILD_PATH}:$GST_PLUGIN_PATH\nexport LD_LIBRARY_PATH=${AMAZON_KINESIS_VIDEO_STREAMS_OPEN_SOURCE_LOCAL_LIB_PATH}:$LD_LIBRARY_PATH" >>~/.profile
         source ~/.profile
@@ -163,9 +163,9 @@ function install-google-cloud() {
             # gcloud auth application-default login --no-launch-browser
             # gcloud services enable visionai.googleapis.com
             # Install Google cloud vision ai
-            curl -L ${GOOGLE_CLOUD_VISION_AI_LATEST_RELEASE} -o ${GOOGLE_CLOUD_VISION_AI_TEMP_DOWNLOAD_PATH}
-            apt-get install ${GOOGLE_CLOUD_VISION_AI_TEMP_DOWNLOAD_PATH}
-            rm -f ${GOOGLE_CLOUD_VISION_AI_TEMP_DOWNLOAD_PATH}
+            curl -L "${GOOGLE_CLOUD_VISION_AI_LATEST_RELEASE}" -o "${GOOGLE_CLOUD_VISION_AI_TEMP_DOWNLOAD_PATH}"
+            apt-get install "${GOOGLE_CLOUD_VISION_AI_TEMP_DOWNLOAD_PATH}"
+            rm -f "${GOOGLE_CLOUD_VISION_AI_TEMP_DOWNLOAD_PATH}"
         fi
     fi
 }
@@ -180,10 +180,10 @@ install-google-cloud
 function install-cps-connetor() {
     if [ ! -d "${CSP_CONNECTOR_PATH}" ]; then
         mkdir -p ${CSP_CONNECTOR_PATH}
-        curl -L "${CSP_CONNECTOR_LATEST_RELEASE}" -o ${CSP_CONNECTOR_TEMP_DOWNLOAD_PATH}
-        tar -xvf ${CSP_CONNECTOR_TEMP_DOWNLOAD_PATH} -C ${CSP_CONNECTOR_PATH}
-        rm -f ${CSP_CONNECTOR_TEMP_DOWNLOAD_PATH}
-        chmod +x ${CSP_CONNECTOR_APPLICATION}
+        curl -L "${CSP_CONNECTOR_LATEST_RELEASE}" -o "${CSP_CONNECTOR_TEMP_DOWNLOAD_PATH}"
+        tar -xvf "${CSP_CONNECTOR_TEMP_DOWNLOAD_PATH}" -C ${CSP_CONNECTOR_PATH}
+        rm -f "${CSP_CONNECTOR_TEMP_DOWNLOAD_PATH}"
+        chmod +x "${CSP_CONNECTOR_APPLICATION}"
         if [ ! -f "${CSP_CONNECTOR_SERVICE}" ]; then
             # This code creates the service file
             # The service file is stored in /etc/systemd/system/csp-connector.service
