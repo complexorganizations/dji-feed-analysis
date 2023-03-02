@@ -48,16 +48,16 @@ installing-system-requirements
 
 # Only allow certain init systems
 function check-current-init-system() {
-  # This code checks if the current init system is systemd or sysvinit
-  # If it is neither, the script exits
-  CURRENT_INIT_SYSTEM=$(ps --no-headers -o comm 1)
-  case ${CURRENT_INIT_SYSTEM} in
-  *"systemd"* | *"init"*) ;;
-  *)
-    echo "${CURRENT_INIT_SYSTEM} init is not supported (yet)."
-    exit
-    ;;
-  esac
+    # This code checks if the current init system is systemd or sysvinit
+    # If it is neither, the script exits
+    CURRENT_INIT_SYSTEM=$(ps --no-headers -o comm 1)
+    case ${CURRENT_INIT_SYSTEM} in
+    *"systemd"* | *"init"*) ;;
+    *)
+        echo "${CURRENT_INIT_SYSTEM} init is not supported (yet)."
+        exit
+        ;;
+    esac
 }
 
 # Check if the current init system is supported
@@ -97,27 +97,29 @@ RTSP_SIMPLE_SERVICE_APPLICATION="${RTSP_SIMPLE_SERVER_PATH}/rtsp-simple-server"
 
 # Install rtsp application.
 function install-rtsp-application() {
-    mkdir -p ${RTSP_SIMPLE_SERVER_PATH}
-    curl -L "${RTSP_SIMPLE_SERVER_LATEST_RELEASE}" -o "${RTSP_SIMPLE_SERVER_TEMP_DOWNLOAD_PATH}"
-    tar -xvf "${RTSP_SIMPLE_SERVER_TEMP_DOWNLOAD_PATH}" -C ${RTSP_SIMPLE_SERVER_PATH}
-    rm -f "${RTSP_SIMPLE_SERVER_TEMP_DOWNLOAD_PATH}"
-    curl ${RTSP_CONFIG_FILE_GITHUB_URL} -o "${RTSP_SIMPLE_SERVER_CONFIG}"
-    chmod +x ${RTSP_SIMPLE_SERVICE_APPLICATION}
-    if [ ! -f "${RTSP_SIMPLE_SERVER_SERVICE}" ]; then
-        # This code creates the service file
-        # The service file is stored in /etc/systemd/system/rtsp-simple-server.service
-        echo "[Unit]
+    if [ ! -d "${RTSP_SIMPLE_SERVER_PATH}" ]; then
+        mkdir -p "${RTSP_SIMPLE_SERVER_PATH}"
+        curl -L "${RTSP_SIMPLE_SERVER_LATEST_RELEASE}" -o "${RTSP_SIMPLE_SERVER_TEMP_DOWNLOAD_PATH}"
+        tar -xvf "${RTSP_SIMPLE_SERVER_TEMP_DOWNLOAD_PATH}" -C "${RTSP_SIMPLE_SERVER_PATH}"
+        rm -f "${RTSP_SIMPLE_SERVER_TEMP_DOWNLOAD_PATH}"
+        curl -L "${RTSP_CONFIG_FILE_GITHUB_URL}" -o "${RTSP_SIMPLE_SERVER_CONFIG}"
+        chmod +x ${RTSP_SIMPLE_SERVICE_APPLICATION}
+        if [ ! -f "${RTSP_SIMPLE_SERVER_SERVICE}" ]; then
+            # This code creates the service file
+            # The service file is stored in /etc/systemd/system/rtsp-simple-server.service
+            echo "[Unit]
 Wants=network.target
 [Service]
 ExecStart=${RTSP_SIMPLE_SERVICE_APPLICATION} ${RTSP_SIMPLE_SERVER_CONFIG}
 [Install]
 WantedBy=multi-user.target" >${RTSP_SIMPLE_SERVER_SERVICE}
-        if [[ "${CURRENT_INIT_SYSTEM}" == *"systemd"* ]]; then
-            systemctl daemon-reload
-            systemctl enable rtsp-simple-server
-            systemctl start rtsp-simple-server
-        elif [[ "${CURRENT_INIT_SYSTEM}" == *"init"* ]]; then
-            service rtsp-simple-server start
+            if [[ "${CURRENT_INIT_SYSTEM}" == *"systemd"* ]]; then
+                systemctl daemon-reload
+                systemctl enable rtsp-simple-server
+                systemctl start rtsp-simple-server
+            elif [[ "${CURRENT_INIT_SYSTEM}" == *"init"* ]]; then
+                service rtsp-simple-server start
+            fi
         fi
     fi
 }
@@ -179,9 +181,9 @@ install-google-cloud
 # Install the cloud connector.
 function install-cps-connetor() {
     if [ ! -d "${CSP_CONNECTOR_PATH}" ]; then
-        mkdir -p ${CSP_CONNECTOR_PATH}
+        mkdir -p "${CSP_CONNECTOR_PATH}"
         curl -L "${CSP_CONNECTOR_LATEST_RELEASE}" -o "${CSP_CONNECTOR_TEMP_DOWNLOAD_PATH}"
-        tar -xvf "${CSP_CONNECTOR_TEMP_DOWNLOAD_PATH}" -C ${CSP_CONNECTOR_PATH}
+        tar -xvf "${CSP_CONNECTOR_TEMP_DOWNLOAD_PATH}" -C "${CSP_CONNECTOR_PATH}"
         rm -f "${CSP_CONNECTOR_TEMP_DOWNLOAD_PATH}"
         chmod +x "${CSP_CONNECTOR_APPLICATION}"
         if [ ! -f "${CSP_CONNECTOR_SERVICE}" ]; then
