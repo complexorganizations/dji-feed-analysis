@@ -2,6 +2,9 @@
 
 # Made in 🗽 for ✊
 
+### Note: Please join the discord if u can code.
+### Discord: https://discord.gg/Zrd68kbK
+
 #### Connect your drone to cloud service provider for real time data analysis.
 
 #### Requirements:
