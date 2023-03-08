@@ -1,6 +1,6 @@
 ### DJI feed analysis
 
-# Designed in 🇺🇸 with ❤️ for 🇺🇦
+[![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
 
 ### Note: If you can code, please join the discord, Your code will save the lives of actual people.
 ### Discord: https://discord.gg/Zrd68kbK
