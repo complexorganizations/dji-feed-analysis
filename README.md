@@ -14,9 +14,10 @@
 - AWS & Google Cloud & Azure
 
 ### Overall Setup:
-- Setup RTSP server.
-- Forward all the fotage from drone to RTSP server.
-- Forward all fotage from RTSP to CSP.
+- Establish a RTMP server and deploy cloud resources using terraform.
+- Use RTMP to send all of the DJI drone's data to the cloud service providers.
+- Locate people, vehicles, and other items in real time on a map.
+- Automated drone flying is planned for the operator's safety.
 
 #### Terraform: comming soon.
 
