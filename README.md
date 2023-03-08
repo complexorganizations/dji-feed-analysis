@@ -1,6 +1,6 @@
 ### DJI feed analysis
 
-# Made in 🇺🇸 with ❤️ for 🇺🇦
+# Designed in 🇺🇸 with ❤️ for 🇺🇦
 
 ### Note: Please join the discord if u can code.
 ### Discord: https://discord.gg/Zrd68kbK
