@@ -63,6 +63,12 @@
 - Compute Engine Virtual Machines (VMs) | Google Cloud
 - Vertex AI Vision | Google Cloud
 - Cloud Storage | Google Cloud
+---
+- Microsoft Azure Virtual Network
+- Microsoft Azure Load Balancer
+- Microsoft Azure Virtual Machines
+- Microsoft Azure "REPLACE_THIS_WITH_KVS_OR_IVS_OR_VERTEX_AI_ON_AZURE"
+- Microsoft Azure Blob Storage
 
 Notes:
 - Make sure you have 30 MBPS Upload & 30 MBPS Download when connecting to the RTMP server.
