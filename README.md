@@ -21,16 +21,6 @@
 - Establish a RTMP server and deploy cloud resources using terraform.
 - Use RTMP to send all of the DJI drone's data to the cloud service providers.
 
-#### Terraform: comming soon.
-
-#### How to install RTSP server with CSP connector?
-``` bash
-curl https://raw.githubusercontent.com/complexorganizations/dji-feed-analysis/main/installer.sh -o installer.sh
-chmod +x installer.sh
-bash installer.sh
-rm -f installer.sh
-```
-
 #### Why are only these drone supported?
 - Currently only these drones are supported since the flight path can be fully automated using [FlightHub](https://www.dji.com/flighthub-2)
 
