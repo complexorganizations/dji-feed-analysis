@@ -65,7 +65,7 @@ rm -f installer.sh
 - Amazon S3
 - Amazon Interactive Video Service
 - Amazon Kinesis Video Streams
-
+---
 - Virtual Private Cloud (VPC) | Google Cloud
 - Cloud Load Balancing | Google Cloud
 - Compute Engine Virtual Machines (VMs) | Google Cloud
