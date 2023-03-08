@@ -6,6 +6,7 @@
 ### Discord: https://discord.gg/Zrd68kbK
 
 #### Connect your drone to cloud service provider for real time data analysis.
+#### 100% fully automated drone using flight hub and automated vision using cloud services providers.
 
 #### Requirements:
 - Professional: DJI Mavic 3 `https://www.ebay.com/itm/304601807310`
