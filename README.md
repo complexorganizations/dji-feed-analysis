@@ -58,5 +58,19 @@ rm -f installer.sh
 - Enable subtitles for videos (location; gps cordnates)... post analysis.
 - Record in 4k 60fps; use the auto feature.
 
+#### Which cloud services are used?
+- Amazon Virtual Private Cloud
+- Amazon Elastic Load Balancer (ELB)
+- Amazon Elastic Compute Cloud
+- Amazon S3
+- Amazon Interactive Video Service
+- Amazon Kinesis Video Streams
+
+- Virtual Private Cloud (VPC) | Google Cloud
+- Cloud Load Balancing | Google Cloud
+- Compute Engine Virtual Machines (VMs) | Google Cloud
+- Vertex AI Vision | Google Cloud
+- Cloud Storage | Google Cloud
+
 Notes:
 - Make sure you have 30 MBPS Upload & 30 MBPS Download when connecting to the RTMP server.
