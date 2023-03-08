@@ -17,6 +17,8 @@
 - Forward all the fotage from drone to RTSP server.
 - Forward all fotage from RTSP to CSP.
 
+#### Terraform: comming soon.
+
 #### How to install RTSP server with CSP connector?
 ``` bash
 curl https://raw.githubusercontent.com/complexorganizations/dji-feed-analysis/main/installer.sh -o installer.sh
@@ -25,14 +27,12 @@ bash installer.sh
 rm -f installer.sh
 ```
 
-#### Terraform: comming soon.
-
 #### Use Case:
 - Find out a person's or an object's real-time coordinates.
-- large-scale field scanning and automatically mapping the locations of things.
+- large-scale field scanning and automatically mapping the locations of things (People & Cars...).
 
 #### Why are only these drone supported?
-- Currently only these drones are supported since the flight path can be fully automated.
+- Currently only these drones are supported since the flight path can be fully automated using [FlightHub](https://www.dji.com/flighthub-2)
 
 #### How to connect your DJI drone to the cloud?
 - DJI APP > Settings > Transmission > Live Streaming Platforms > RTMP > `rtmp://localhost:1935/drone_0?user=Administrator&pass=Password`
