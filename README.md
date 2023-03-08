@@ -17,13 +17,15 @@
 - Forward all the fotage from drone to RTSP server.
 - Forward all fotage from RTSP to CSP.
 
-#### How to use?
+#### How to install RTSP server with CSP connector?
 ``` bash
 curl https://raw.githubusercontent.com/complexorganizations/dji-feed-analysis/main/installer.sh -o installer.sh
 chmod +x installer.sh
 bash installer.sh
 rm -f installer.sh
 ```
+
+#### Terraform: comming soon.
 
 #### Use Case:
 - Find out a person's or an object's real-time coordinates.
