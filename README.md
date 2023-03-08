@@ -14,8 +14,8 @@
 - AWS & Google Cloud & Azure
 
 #### Use Case:
-- Locate people, vehicles, and other items in real time on a map.
-- Automated drone flying is planned for the operator's safety.
+- Use computer vision to instantly find people, vehicles, and other things on a coordinate system.
+- For the highest operator safety, fully autonomous drone flying is preferred.
 
 ### Overall Setup:
 - Establish a RTMP server and deploy cloud resources using terraform.
