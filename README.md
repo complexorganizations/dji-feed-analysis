@@ -2,6 +2,8 @@
 
 [![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
 
+[![](https://i.ytimg.com/vi/TMG4yqfH7Cc/hqdefault.jpg)](https://www.youtube.com/watch?v=TMG4yqfH7Cc "")
+
 ### Note: If you can code, please join the discord, Your code will save the lives of actual people.
 ### Discord: https://discord.gg/Zrd68kbK
 
