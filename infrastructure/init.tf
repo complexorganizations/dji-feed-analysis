@@ -33,3 +33,6 @@ provider "google" {
 provider "azurerm" {
   features {}
 }
+
+// Check which provider is configured properly and only use that provider;
+// If multiple providers are configured than use mutiple ones.
