@@ -51,7 +51,7 @@ rm -f installer.sh
 - DJI RC ***The one with the screen build in is NOT supported.***
 
 #### Is it better to use android or ios?
-- Android has a bitrate of 5 while ios has a bitrate of 3.
+- Android has a bitrate of 5 while ios has a bitrate of 3. ***Android***
 
 #### What settings should the DJI use?
 - Disable cache for videos *Useless storage*
