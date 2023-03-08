@@ -13,11 +13,13 @@
 - Enterprise: DJI Matrice 30 & Dock ``
 - AWS & Google Cloud & Azure
 
+#### Use Case:
+- Locate people, vehicles, and other items in real time on a map.
+- Automated drone flying is planned for the operator's safety.
+
 ### Overall Setup:
 - Establish a RTMP server and deploy cloud resources using terraform.
 - Use RTMP to send all of the DJI drone's data to the cloud service providers.
-- Locate people, vehicles, and other items in real time on a map.
-- Automated drone flying is planned for the operator's safety.
 
 #### Terraform: comming soon.
 
@@ -28,10 +30,6 @@ chmod +x installer.sh
 bash installer.sh
 rm -f installer.sh
 ```
-
-#### Use Case:
-- Find out a person's or an object's real-time coordinates.
-- large-scale field scanning and automatically mapping the locations of things (People & Cars...).
 
 #### Why are only these drone supported?
 - Currently only these drones are supported since the flight path can be fully automated using [FlightHub](https://www.dji.com/flighthub-2)
