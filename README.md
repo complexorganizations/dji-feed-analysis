@@ -2,7 +2,7 @@
 
 # Designed in 🇺🇸 with ❤️ for 🇺🇦
 
-### Note: Please join the discord if u can code.
+### Note: If you can code, please join the discord, Your code will save the lives of actual people.
 ### Discord: https://discord.gg/Zrd68kbK
 
 #### Connect your drone to cloud service provider for real time data analysis.
