@@ -64,3 +64,12 @@ resource "aws_cloudwatch_log_group" "vpc_flow_log_group" {
   }
   kms_key_id = aws_kms_key.key_0.arn
 }
+
+// Create 6 subnet (3 private / 3 public)
+resource "aws_subnet" "subnet_0" {
+  vpc_id     = aws_vpc.vpc.id
+  cidr_block = "10.0.1.0/24"
+  tags = {
+    Name = "private-subnet-"
+  }
+}
