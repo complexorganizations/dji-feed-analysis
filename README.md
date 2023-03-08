@@ -34,10 +34,10 @@ rm -f installer.sh
 #### Why are only these drone supported?
 - Currently only these drones are supported since the flight path can be fully automated using [FlightHub](https://www.dji.com/flighthub-2)
 
-#### How to connect your DJI drone to the cloud?
+#### How to stream the video feed from your DJI drone to the cloud?
 - DJI APP > Settings > Transmission > Live Streaming Platforms > RTMP > `rtmp://localhost:1935/drone_0?user=Administrator&pass=Password`
 
-#### How to transfer waypoints from DJI FH to device?
+#### How to transfer waypoints from DJI flight hub to controller?
 - ``
 
 #### How to watch the stream live via vlc?
@@ -48,15 +48,15 @@ rm -f installer.sh
 - DJI RC Pro
 
 #### Why are the other conrollers not supported?
-- DJI RC
+- DJI RC ***Includes Screen***
 
 #### Is it better to use android or ios?
 - Android has a bitrate of 5 while ios has a bitrate of 3.
 
 #### What settings should the DJI use?
-- Disable cache for videos
+- Disable cache for videos *Useless storage*
 - Enable subtitles for videos (location; gps cordnates)... post analysis.
 - Record in 4k 60fps; use the auto feature.
 
 Notes:
-- Use good wifi when using RTMP
+- Make sure you have 30 MBPS Upload & 30 MBPS Download when connecting to the RTMP server.
