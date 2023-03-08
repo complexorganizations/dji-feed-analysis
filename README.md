@@ -26,21 +26,20 @@ rm -f installer.sh
 ```
 
 #### Use Case:
-- Get the location of people.
-- Get the location of objects in real time.
-- Using waypoints automate the drone completely.
+- Find out a person's or an object's real-time coordinates.
+- large-scale field scanning and automatically mapping the locations of things.
 
 #### Why are only these drone supported?
 - Currently only these drones are supported since the flight path can be fully automated.
 
-#### How to connect your drone to the cloud?
-- Settings > Transmission > Live Streaming Platforms > RTMP > `rtmp://localhost:1935/drone_0?user=Administrator&pass=Password`
+#### How to connect your DJI drone to the cloud?
+- DJI APP > Settings > Transmission > Live Streaming Platforms > RTMP > `rtmp://localhost:1935/drone_0?user=Administrator&pass=Password`
 
 #### How to transfer waypoints from DJI FH to device?
 - ``
 
 #### How to watch the stream live via vlc?
-- `rtsp://Administrator:Password@localhost:8554/drone_0`
+- VLC APP > Media > Open Network Stream > `rtsp://Administrator:Password@localhost:8554/drone_0`
 
 #### Which controlls are supported?
 - RC-N1
