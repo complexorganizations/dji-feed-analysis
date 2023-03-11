@@ -1,10 +1,7 @@
 ### DJI feed analysis
 
-[![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
-
 [![](https://i.ytimg.com/vi/TMG4yqfH7Cc/hqdefault.jpg)](https://www.youtube.com/watch?v=TMG4yqfH7Cc "")
 
-### Use your coding abilities to save lives on the battlefield rather than wasting your time on pointless projects.
 ### If you would want to participate in this project, kindly join the discord server.
 ### Discord: https://discord.gg/Zrd68kbK
 
