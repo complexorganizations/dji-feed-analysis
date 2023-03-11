@@ -4,7 +4,8 @@
 
 [![](https://i.ytimg.com/vi/TMG4yqfH7Cc/hqdefault.jpg)](https://www.youtube.com/watch?v=TMG4yqfH7Cc "")
 
-### Note: If you can code, please join the discord, Your code will save the lives of actual people.
+### Use your coding abilities to save lives on the battlefield rather than wasting your time on pointless projects.
+### If you would want to participate in this project, kindly join the discord server.
 ### Discord: https://discord.gg/Zrd68kbK
 
 #### Connect your drone to cloud service provider for real time deep data analysis.
