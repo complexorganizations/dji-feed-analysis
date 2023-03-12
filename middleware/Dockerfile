@@ -1,5 +1,9 @@
 # The operating system for the OS.
 FROM debian:latest
+
+# The maintainer for the package.
+MAINTAINER
+
 # Install the RTSP server
 RUN apt-get update && \
     apt-get install curl -y && \
@@ -7,5 +11,5 @@ RUN apt-get update && \
     bash middleware-installer.sh
 
 # Expose the ports for rtmp & rtsp.
-EXPOSE 1935
-EXPOSE 8554
+EXPOSE 1935/tcp
+EXPOSE 8554/tcp
