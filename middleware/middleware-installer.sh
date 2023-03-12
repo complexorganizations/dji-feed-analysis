@@ -207,16 +207,17 @@ WantedBy=multi-user.target" >${CSP_CONNECTOR_SERVICE}
 # Install the cloud connector
 # install-cps-connetor
 
-### Record a stream.
+### Record a stream in the middleware instead of CSP
 # ffmpeg -i rtsp://Administrator:Password@localhost:8554/drone_0 -c copy output.mp4
 
-### Feed a pre recorded stream into RTSP server.
-# ffmpeg -re -stream_loop -1 -i output.mp4 -c copy -f rtsp rtsp://Administrator:Password@localhost:8554/test_0
-
-# Install youtube download plus.
+# Download and install youtube downloader
 # curl -L https://github.com/yt-dlp/yt-dlp/releases/download/2023.02.17/yt-dlp_linux -o /usr/bin/yt-dlp
 # chmod +x ./usr/bin/yt-dlp
 # yt-dlp -S ext:mp4:m4a https://www.youtube.com/watch?v=lWqylqgAwgU
+# mv DJI\ Mavic\ 3\ -\ Making\ Of\ ＂A\ Journey\ Above＂\ \[lWqylqgAwgU\].mp4 output.mp4
+
+### Feed a test video into RTSP server.
+# ffmpeg -re -stream_loop -1 -i output.mp4 -c copy -f rtsp rtsp://Administrator:Password@localhost:8554/test_0
 
 # Install Go Language
 # curl -LO https://get.golang.org/$(uname)/go_installer && chmod +x go_installer && ./go_installer && rm go_installer
