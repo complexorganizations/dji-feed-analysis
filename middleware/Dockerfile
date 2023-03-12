@@ -1,5 +1,5 @@
 # The operating system for the OS.
-FROM debian
+FROM debian:latest
 # Install the RTSP server
 RUN apt-get update && \
     apt-get install curl -y && \
