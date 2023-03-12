@@ -54,7 +54,6 @@
 - Amazon Elastic Compute Cloud
 - Amazon Auto Scaling
 - Amazon Kinesis Video Streams
-- Amazon Interactive Video Service
 - Amazon S3
 ---
 - Virtual Private Cloud (VPC) | Google Cloud
