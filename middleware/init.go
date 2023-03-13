@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"os"
+	// "log"
 	"sync"
 )
 
@@ -48,9 +49,9 @@ func init() {
 		applicationConfigFile = *tempUpdate
 	}
 	// Print the sha256 of the file
-	// fmt.Println(sha256OfFile(applicationConfigFile))
+	// log.Println(sha256OfFile(applicationConfigFile))
 	// Check if the config file has not been modified
-	if sha256OfFile(applicationConfigFile) == "0cb4e37fe05a3c6d5eb2a5778214e017c98b6a646e8b7e6ae21d6d33bba83c35f93ce87cfa552a366a4f5237dcecf4556c85d3db7338ad59173095b100ce421b" {
+	if sha256OfFile(applicationConfigFile) == "b40313672e23c3eb96a55b4e88dfc184dca23ad472c7e47e1db0b5d28f38087e814cc612853017e7c830fea3a0df973e673383e0a01bd151cbeab3e97647befc" {
 		// The file has not been modified
 		exitTheApplication("Error: The config file has not been modified, Please modify it and try again.")
 	}
