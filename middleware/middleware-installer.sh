@@ -30,9 +30,9 @@ system-information
 
 # Pre-Checks system requirements
 function installing-system-requirements() {
-    if [ "${CURRENT_DISTRO}" == "ubuntu" ]; then
+    if [ "${CURRENT_DISTRO}" == "debian" ]; then
         if { [ ! -x "$(command -v cut)" ] || [ ! -x "$(command -v git)" ] || [ ! -x "$(command -v ffmpeg)" ] || [ ! -x "$(command -v zip)" ] || [ ! -x "$(command -v unzip)" ]; }; then
-            if [ "${CURRENT_DISTRO}" == "ubuntu" ]; then
+            if [ "${CURRENT_DISTRO}" == "debian" ]; then
                 apt-get update
                 apt-get install coreutils git ffmpeg curl openssl tar apt-transport-https ca-certificates gnupg zip unzip -y
             fi
@@ -54,7 +54,7 @@ function check-current-init-system() {
     case ${CURRENT_INIT_SYSTEM} in
     *"systemd"* | *"init"*) ;;
     *)
-        echo "${CURRENT_INIT_SYSTEM} init is not supported (yet)."
+        echo "Error: ${CURRENT_INIT_SYSTEM} init is not supported (yet)."
         exit
         ;;
     esac
@@ -62,6 +62,36 @@ function check-current-init-system() {
 
 # Check if the current init system is supported
 check-current-init-system
+
+# Checking For Virtualization
+function virt-check() {
+  # This code checks if the system is running in a supported virtualization.
+  # It returns the name of the virtualization if it is supported, or "none" if
+  # it is not supported. This code is used to check if the system is running in
+  # a virtual machine, and if so, if it is running in a supported virtualization.
+  CURRENT_SYSTEM_VIRTUALIZATION=$(systemd-detect-virt --container)
+  case ${CURRENT_SYSTEM_VIRTUALIZATION} in
+  "docker" | "none") ;;
+  *)
+    echo "${CURRENT_SYSTEM_VIRTUALIZATION} virtualization is not supported (yet)."
+    exit
+    ;;
+  esac
+}
+
+# Virtualization Check
+virt-check
+
+# Make sure the script is running inside docker or else exit the script.
+function check-inside-docker() {
+    if [ ! -f /.dockerenv ]; then
+        echo "Error: This script isn't running inside docker."
+        exit
+    fi
+}
+
+# Make sure the application is running inside docker.
+check-inside-docker
 
 # Global variables
 AMAZON_KINESIS_VIDEO_STREAMS_LATEST_RELEASE=$(curl -s https://api.github.com/repos/awslabs/amazon-kinesis-video-streams-producer-sdk-cpp/releases/latest | grep zipball_url | cut -d'"' -f4)
