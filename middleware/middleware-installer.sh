@@ -239,7 +239,7 @@ WantedBy=multi-user.target" >${CSP_CONNECTOR_SERVICE}
 # ffmpeg -i rtsp://Administrator:Password@localhost:8554/drone_0 -c copy output.mp4
 
 # Download and install youtube downloader
-# curl -L https://github.com/yt-dlp/yt-dlp/releases/download/2023.02.17/yt-dlp_linux -o /usr/bin/yt-dlp
+# curl -L https://github.com/yt-dlp/yt-dlp/releases/download/2023.03.04/yt-dlp_linux -o /usr/bin/yt-dlp
 # chmod +x ./usr/bin/yt-dlp
 # yt-dlp -S ext:mp4:m4a https://www.youtube.com/watch?v=lWqylqgAwgU
 # mv DJI\ Mavic\ 3\ -\ Making\ Of\ ＂A\ Journey\ Above＂\ \[lWqylqgAwgU\].mp4 output.mp4
