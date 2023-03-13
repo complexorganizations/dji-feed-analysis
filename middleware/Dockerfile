@@ -1,9 +1,6 @@
 # The operating system for the OS.
 FROM debian:latest
 
-# The maintainer for the package.
-MAINTAINER
-
 # Install the RTSP server
 RUN apt-get update && \
     apt-get install curl -y && \
