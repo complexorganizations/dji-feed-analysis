@@ -65,18 +65,18 @@ check-current-init-system
 
 # Checking For Virtualization
 function virt-check() {
-  # This code checks if the system is running in a supported virtualization.
-  # It returns the name of the virtualization if it is supported, or "none" if
-  # it is not supported. This code is used to check if the system is running in
-  # a virtual machine, and if so, if it is running in a supported virtualization.
-  CURRENT_SYSTEM_VIRTUALIZATION=$(systemd-detect-virt --container)
-  case ${CURRENT_SYSTEM_VIRTUALIZATION} in
-  "docker" | "none") ;;
-  *)
-    echo "${CURRENT_SYSTEM_VIRTUALIZATION} virtualization is not supported (yet)."
-    exit
-    ;;
-  esac
+    # This code checks if the system is running in a supported virtualization.
+    # It returns the name of the virtualization if it is supported, or "none" if
+    # it is not supported. This code is used to check if the system is running in
+    # a virtual machine, and if so, if it is running in a supported virtualization.
+    CURRENT_SYSTEM_VIRTUALIZATION=$(systemd-detect-virt --container)
+    case ${CURRENT_SYSTEM_VIRTUALIZATION} in
+    "docker" | "none") ;;
+    *)
+        echo "${CURRENT_SYSTEM_VIRTUALIZATION} virtualization is not supported (yet)."
+        exit
+        ;;
+    esac
 }
 
 # Virtualization Check
