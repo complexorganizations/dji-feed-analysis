@@ -62,7 +62,7 @@ func init() {
 	// Check if the required application are present in the system
 	for _, app := range requiredApplications {
 		if commandExists(app) == false {
-			exitTheApplication("Error:" + app + "is not installed in your system, Please install it and try again.")
+			exitTheApplication("Error: " + app + "is not installed in your system, Please install it and try again.")
 		}
 	}
 	// Check if the config has the correct format and all the info is correct.
